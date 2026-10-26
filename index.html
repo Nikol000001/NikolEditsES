@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikol Jaramillo | Video Editor & Multimedia Designer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0f0f11',
+                            card: '#16161a',
+                            border: '#24242a',
+                            text: '#f2f2f5',
+                            muted: '#9e9ea7',
+                            green: '#8ee0a1',
+                            greenHover: '#74d68a',
+                            greenMuted: 'rgba(142, 224, 161, 0.12)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #0f0f11;
+            color: #f2f2f5;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Modern Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #24242a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8ee0a1;
+        }
+
+        /* Text Stroke & Glow Effects */
+        .text-stroke {
+            -webkit-text-stroke: 1.5px #f2f2f5;
+            color: transparent;
+        }
+        .text-stroke:hover {
+            color: #8ee0a1;
+            -webkit-text-stroke: 1.5px #8ee0a1;
+            transition: all 0.4s ease;
+        }
+
+        .glow-green {
+            box-shadow: 0 0 35px -5px rgba(142, 224, 161, 0.25);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(142, 224, 161, 0.4);
+        }
+
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text antialiased selection:bg-brand-green selection:text-brand-bg bg-grid-pattern">
+
+    <!-- NAV BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-xl font-bold tracking-wider text-brand-text hover:text-brand-green transition-colors flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-green inline-block animate-pulse"></span>
+                NIKOL<span class="text-brand-green">JARAMILLO</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#destacados" class="hover:text-brand-green transition-colors">FEATURED</a>
+                <a href="#sobre-mi" class="hover:text-brand-green transition-colors">ABOUT ME</a>
+                <a href="#setup" class="hover:text-brand-green transition-colors">SETUP & TOOLS</a>
+                <a href="#portafolio" class="hover:text-brand-green transition-colors">CATEGORIES</a>
+            </div>
+
+            <a href="#portafolio" class="px-5 py-2.5 rounded-full bg-brand-green text-brand-bg font-semibold text-sm hover:bg-brand-greenHover transition-all transform hover:scale-105 shadow-lg shadow-brand-green/20 flex items-center gap-2">
+                <span>Explore Work</span>
+                <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-screen pt-32 pb-20 px-6 flex flex-col justify-center relative overflow-hidden">
+        <!-- Ambient BG Blurs -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 -right-20 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full">
+            <div data-aos="fade-up" data-aos-duration="1000" class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand-card border border-brand-border mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-green"></span>
+                <span class="text-xs font-mono tracking-widest text-brand-muted uppercase">MULTIMEDIA ENGINEERING & MASTER EDITING</span>
+            </div>
+
+            <h1 data-aos="fade-up" data-aos-delay="200" class="font-display text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight leading-none mb-6">
+                VISUAL <br>
+                <span class="text-stroke transition-all duration-500 hover:text-brand-green">STORYTELLING</span> <br>
+                <span class="text-brand-green glow-text">WITHOUT LIMITS</span>
+            </h1>
+
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mt-12 border-t border-brand-border/60 pt-8">
+                <p class="max-w-xl text-lg md:text-xl text-brand-muted font-light leading-relaxed">
+                    High-energy strategic editing focused on <span class="text-brand-text font-semibold">RETENTION</span>, <span class="text-brand-text font-semibold">IMPACT</span> and <span class="text-brand-green font-semibold">VISUAL AURA</span>. Turning footage into memorable visual pieces.
+                </p>
+
+                <div class="flex items-center gap-6">
+                    <div class="text-left">
+                        <div class="text-3xl font-bold font-display text-brand-text">3+ YEARS</div>
+                        <div class="text-xs text-brand-muted uppercase tracking-wider">Experience</div>
+                    </div>
+                    <div class="h-10 w-px bg-brand-border"></div>
+                    <div class="text-left">
+                        <div class="text-3xl font-bold font-display text-brand-green">100+</div>
+                        <div class="text-xs text-brand-muted uppercase tracking-wider">Pro Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MY TOP 3 VIDEOS (SHOWCASE HERO) -->
+    <section id="destacados" class="py-24 px-6 bg-brand-card/40 border-y border-brand-border/50">
+        <div class="max-w-7xl mx-auto">
+            <div data-aos="fade-right" class="flex items-center gap-4 mb-16">
+                <i data-lucide="sparkles" class="w-8 h-8 text-brand-green"></i>
+                <h2 class="text-3xl md:text-5xl font-black font-display uppercase tracking-tight">
+                    MASTER<span class="text-brand-green">PIECES</span>
+                </h2>
+                <div class="h-px bg-brand-border flex-1 ml-4 hidden md:block"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="group relative rounded-2xl bg-brand-card border border-brand-border overflow-hidden hover:border-brand-green/60 transition-all duration-500 hover:-translate-y-2 glow-green">
+                    <div class="aspect-[9/16] relative bg-black">
+                        <video class="w-full h-full object-cover" controls preload="metadata" poster="https://placehold.co/600x1066/16161a/8ee0a1?text=Commercial+Highlight">
+                            <source src="Videos/Comerciales/Comercial_1.mp4" type="video/mp4">
+                            Your browser does not support the video format.
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-brand-green uppercase tracking-wider">01 / Featured Commercial</span>
+                        <h3 class="text-xl font-bold font-display mt-1 group-hover:text-brand-green transition-colors">High-Impact Campaign</h3>
+                        <p class="text-sm text-brand-muted mt-2">Dynamic cuts, immersive sound design and cinematic color grading.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="group relative rounded-2xl bg-brand-card border border-brand-border overflow-hidden hover:border-brand-green/60 transition-all duration-500 hover:-translate-y-2 glow-green">
+                    <div class="aspect-[9/16] relative bg-black">
+                        <video class="w-full h-full object-cover" controls preload="metadata" poster="https://placehold.co/600x1066/16161a/8ee0a1?text=Motion+Graphics+Highlight">
+                            <source src="Videos/MotionGraphics.mp4" type="video/mp4">
+                            Your browser does not support the video format.
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-brand-green uppercase tracking-wider">02 / Motion Graphics</span>
+                        <h3 class="text-xl font-bold font-display mt-1 group-hover:text-brand-green transition-colors">VFX & Visual Storytelling</h3>
+                        <p class="text-sm text-brand-muted mt-2">Advanced digital compositing in After Effects with smooth text animations.</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="group relative rounded-2xl bg-brand-card border border-brand-border overflow-hidden hover:border-brand-green/60 transition-all duration-500 hover:-translate-y-2 glow-green">
+                    <div class="aspect-[9/16] relative bg-black">
+                        <video class="w-full h-full object-cover" controls preload="metadata" poster="https://placehold.co/600x1066/16161a/8ee0a1?text=Podcast+Highlight">
+                            <source src="Videos/Podcast/Podcast_1.mp4" type="video/mp4">
+                            Your browser does not support the video format.
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-brand-green uppercase tracking-wider">03 / Podcast & Retention</span>
+                        <h3 class="text-xl font-bold font-display mt-1 group-hover:text-brand-green transition-colors">Conversational Storytelling</h3>
+                        <p class="text-sm text-brand-muted mt-2">Dynamic captions, strategic b-roll and fast-paced editing rhythm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="sobre-mi" class="py-32 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Main Photo Nikol -->
+                <div data-aos="zoom-in-right" data-aos-duration="1000" class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-brand-green/30 to-transparent blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-card aspect-square">
+                        <img src="Fotos/Nikol.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x800/16161a/8ee0a1?text=Nikol+Jaramillo';" 
+                             alt="Nikol Jaramillo" 
+                             class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-brand-bg via-brand-bg/80 to-transparent">
+                            <span class="text-xs font-mono text-brand-green uppercase tracking-widest">Editor & Creator</span>
+                            <h3 class="text-2xl font-bold font-display">Nikol Jaramillo</h3>
+                            <p class="text-xs text-brand-muted">Cali, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biography & Summary -->
+                <div data-aos="fade-left" data-aos-duration="1000" class="lg:col-span-7 flex flex-col justify-center">
+                    <div class="inline-flex items-center gap-2 text-brand-green font-mono text-sm uppercase mb-4">
+                        <i data-lucide="user" class="w-4 h-4"></i>
+                        <span>Professional Biography</span>
+                    </div>
+
+                    <h2 class="text-4xl md:text-6xl font-black font-display tracking-tight leading-none mb-8">
+                        CREATIVITY THAT <br>
+                        <span class="text-brand-green">SPARKS PASSION</span>
+                    </h2>
+
+                    <div class="space-y-6 text-brand-muted text-lg font-light leading-relaxed">
+                        <p>
+                            I'm <strong class="text-brand-text font-semibold">Nikol Jaramillo</strong>, a 20-year-old video editor and multimedia designer with over <strong class="text-brand-green font-semibold">3 years of professional experience</strong> bringing audiovisual projects to life with an unmistakable visual identity.
+                        </p>
+                        <p>
+                            My passion lies in transforming raw ideas into high-value content that not only retains audiences but also sparks inspiration and creativity in those who watch it. I'm currently finishing my degree in <strong class="text-brand-text font-semibold">Multimedia Engineering at Universidad San Buenaventura Cali</strong>, which gives me a solid technical foundation combined with a modern, disruptive aesthetic vision.
+                        </p>
+                        <p class="border-l-2 border-brand-green pl-6 italic text-brand-text/90">
+                            "I love fully immersing myself in every project. I see each edit as an opportunity to reflect the love, discipline and purpose that God has placed in my life, making sure every cut has soul and purpose."
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-10">
+                        <div class="p-4 rounded-xl bg-brand-card/60 border border-brand-border">
+                            <div class="text-brand-green font-bold text-xl font-display">20 Years Old</div>
+                            <div class="text-xs text-brand-muted">Youth & Innovation</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card/60 border border-brand-border">
+                            <div class="text-brand-green font-bold text-xl font-display">USB Cali</div>
+                            <div class="text-xs text-brand-muted">Multimedia Eng.</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card/60 border border-brand-border">
+                            <div class="text-brand-green font-bold text-xl font-display">3+ Years</div>
+                            <div class="text-xs text-brand-muted">Real Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SETUP & TOOLS (HARDWARE & SOFTWARE) -->
+    <section id="setup" class="py-28 px-6 bg-brand-card/20 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div data-aos="fade-up" class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-brand-green font-mono text-sm uppercase tracking-widest">Workstation & Software</span>
+                <h2 class="text-4xl md:text-6xl font-black font-display mt-2 uppercase tracking-tight">
+                    HIGH-PERFORMANCE <span class="text-brand-green">TOOLS</span>
+                </h2>
+                <p class="text-brand-muted mt-4">
+                    The perfect combination of technological power and professional software for ultra-fast renders and complex compositions without limits.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Hardware Card / PC Specs -->
+                <div data-aos="fade-right" class="lg:col-span-6 bg-brand-card border border-brand-border rounded-3xl p-8 hover:border-brand-green/50 transition-all duration-500">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 rounded-xl bg-brand-greenMuted text-brand-green">
+                                <i data-lucide="laptop" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold font-display">Equipment Specs</h3>
+                                <p class="text-xs text-brand-muted">MacBook Air Workstation Setup</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-brand-green/10 text-brand-green border border-brand-green/20">Optimized</span>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden border border-brand-border/80 mb-6 bg-black/40">
+                        <img src="Fotos/CaracteristicasPC.png" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x450/16161a/8ee0a1?text=MacBook+Air+Specs';" 
+                             alt="Nikol's PC Specs" 
+                             class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-brand-muted font-mono">
+                        <li class="flex justify-between items-center pb-2 border-b border-brand-border/40">
+                            <span>Processor:</span>
+                            <span class="text-brand-text font-semibold">Apple M1 High-Efficiency</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2 border-b border-brand-border/40">
+                            <span>RAM:</span>
+                            <span class="text-brand-text font-semibold">16 GB Unified</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2 border-b border-brand-border/40">
+                            <span>Operating System:</span>
+                            <span class="text-brand-text font-semibold">macOS Sequoia</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Render Capability:</span>
+                            <span class="text-brand-green font-semibold">ProRes & 4K Real-Time</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Software Ecosystem Cards -->
+                <div class="lg:col-span-6 space-y-6">
+                    
+                    <!-- After Effects -->
+                    <div data-aos="fade-left" data-aos-delay="100" class="group bg-brand-card border border-brand-border p-8 rounded-3xl hover:border-brand-green transition-all duration-500 hover:-translate-y-1">
+                        <div class="flex items-start gap-6">
+                            <div class="w-20 h-20 rounded-2xl bg-black border border-brand-border flex items-center justify-center p-3 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <img src="Fotos/AfterEffects.png" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/100x100/16161a/8ee0a1?text=Ae';" 
+                                     alt="After Effects" 
+                                     class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-3">
+                                    <h4 class="text-2xl font-bold font-display group-hover:text-brand-green transition-colors">Adobe After Effects</h4>
+                                    <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-brand-border text-brand-muted">Advanced</span>
+                                </div>
+                                <p class="text-sm text-brand-muted mt-2 leading-relaxed">
+                                    Specialized in complex Motion Graphics, VFX compositing, cinematic typography animation, 3D tracking, rotoscoping and high-end visual effects for commercials and high-impact projects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CapCut Pro -->
+                    <div data-aos="fade-left" data-aos-delay="200" class="group bg-brand-card border border-brand-border p-8 rounded-3xl hover:border-brand-green transition-all duration-500 hover:-translate-y-1">
+                        <div class="flex items-start gap-6">
+                            <div class="w-20 h-20 rounded-2xl bg-black border border-brand-border flex items-center justify-center p-3 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <img src="Fotos/CapCut.png" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/100x100/16161a/8ee0a1?text=CapCut';" 
+                                     alt="CapCut Pro" 
+                                     class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-3">
+                                    <h4 class="text-2xl font-bold font-display group-hover:text-brand-green transition-colors">CapCut Pro</h4>
+                                    <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-brand-border text-brand-muted">Agile Workflow</span>
+                                </div>
+                                <p class="text-sm text-brand-muted mt-2 leading-relaxed">
+                                    Full mastery of high-energy vertical format editing (Reels, TikToks, Shorts). Ultra-fast workflow for high-volume content, fast-paced rhythms, automated captions and viral trends.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EDITING CATEGORIES SECTION (EXPANDABLE CARDS) -->
+    <section id="portafolio" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            
+            <div data-aos="fade-up" class="mb-16">
+                <span class="text-brand-green font-mono text-sm uppercase tracking-widest">Content Catalog</span>
+                <h2 class="text-4xl md:text-7xl font-black font-display uppercase tracking-tight mt-2">
+                    EDITING <span class="text-brand-green">CATEGORIES</span>
+                </h2>
+                <p class="text-brand-muted max-w-2xl mt-4 text-lg">
+                    Explore the different storytelling styles. Each category is designed with a specific purpose in terms of retention, audiovisual tone and target audience.
+                </p>
+            </div>
+
+            <!-- CARDS CONTAINER -->
+            <div class="space-y-6" id="categoriesContainer">
+
+                <!-- CATEGORY 1: PODCAST -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('podcast')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                01
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Podcast</h3>
+                                <p class="text-sm text-brand-muted mt-1">Conversational editing, multicam cuts, visual emphasis and retention hooks.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">4 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-podcast" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-podcast" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Video Items -->
+                            <script>
+                                for(let i=1; i<=4; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/Podcast/Podcast_${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                Podcast_${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 2: GAMING -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('gaming')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                02
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Gaming</h3>
+                                <p class="text-sm text-brand-muted mt-1">Frantic pacing, immersive sound effects, contextual memes and key moments.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">2 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-gaming" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-gaming" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <script>
+                                for(let i=1; i<=2; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/Gaming/Gaming_${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                Gaming_${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 3: COMMERCIALS -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('comerciales')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                03
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Commercials & Brands</h3>
+                                <p class="text-sm text-brand-muted mt-1">Advertising spots, premium aesthetics, calls to action and sales conversion.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">12 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-comerciales" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-comerciales" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <script>
+                                for(let i=1; i<=12; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/Comerciales/Comercial_${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                Comercial_${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 4: BULK VIDEOS -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('enmasa')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                04
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Bulk Videos (Cutting & Curation)</h3>
+                                <p class="text-sm text-brand-muted mt-1">Expert filtering and curation of full-day shoots to extract only the visual gold.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">22 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-enmasa" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-enmasa" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <script>
+                                for(let i=1; i<=22; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/VideosEnMasa/VideosEnMasa-${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                VideosEnMasa-${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 5: VOICE-OVER & SCRIPTWRITING -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('vozoff')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                05
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Voice-Over + Scriptwriting & B-Roll</h3>
+                                <p class="text-sm text-brand-muted mt-1">Narrative scriptwriting, recorded voice-over and precise clip selection for travel and experiences.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">2 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-vozoff" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-vozoff" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <script>
+                                for(let i=1; i<=2; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/VozEnOFF/VozEnOFF_${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                VozEnOFF_${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 6: MARKETING AGENCY -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('agencia')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                06
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Marketing Agency</h3>
+                                <p class="text-sm text-brand-muted mt-1">Organic and paid content strategies focused on metrics, branding and positioning.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">3 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-agencia" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-agencia" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <script>
+                                for(let i=1; i<=3; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/AgenciaMarketing/AgenciaMarketing_${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                AgenciaMarketing_${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 7: CONTENT CREATOR -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('creador')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                07
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Content Creator / Personal Brand</h3>
+                                <p class="text-sm text-brand-muted mt-1">Custom editing tailored to each visual creator's style, language and charisma.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">7 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-creador" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-creador" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <script>
+                                for(let i=1; i<=7; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/CreadorDeContenido/CreadorDeContenido_${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                CreadorDeContenido_${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 8: EDUCATION -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('educacion')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                08
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Education & Digital Products</h3>
+                                <p class="text-sm text-brand-muted mt-1">Clear explanations, supporting graphics and technical retention for courses and educational pieces.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">2 Videos</span>
+                            <i data-lucide="chevron-down" id="icon-educacion" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-educacion" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <script>
+                                for(let i=1; i<=2; i++) {
+                                    document.write(`
+                                        <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                            <div class="aspect-[9/16] relative bg-black">
+                                                <video class="w-full h-full object-cover" controls preload="none">
+                                                    <source src="Videos/Educacion/Educacion_${i}.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                                Educacion_${i}.mp4
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 9: MOTION GRAPHICS -->
+                <div data-aos="fade-up" class="category-card rounded-3xl bg-brand-card border border-brand-border overflow-hidden transition-all duration-300">
+                    <button onclick="toggleCategory('motion')" class="w-full p-8 flex items-center justify-between text-left hover:bg-brand-border/30 transition-colors">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-greenMuted text-brand-green flex items-center justify-center font-bold font-display text-xl">
+                                09
+                            </div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold font-display">Motion Graphics & VFX Showcase</h3>
+                                <p class="text-sm text-brand-muted mt-1">Digital animation, 2D/3D visual effects and complex pieces in After Effects.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-brand-border text-brand-text">3 Demos (Local + YouTube)</span>
+                            <i data-lucide="chevron-down" id="icon-motion" class="w-6 h-6 text-brand-green transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div id="content-motion" class="hidden p-8 border-t border-brand-border/60 bg-black/30">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            
+                            <!-- Local MP4 -->
+                            <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border">
+                                <div class="aspect-[9/16] relative bg-black">
+                                    <video class="w-full h-full object-cover" controls preload="none">
+                                        <source src="Videos/MotionGraphics.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="p-3 text-xs font-mono text-brand-muted text-center border-t border-brand-border/40">
+                                    MotionGraphics.mp4 (Local)
+                                </div>
+                            </div>
+
+                            <!-- YouTube Video 1 -->
+                            <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border md:col-span-1">
+                                <div class="aspect-[9/16] relative bg-black">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/d55NAOGUis8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="p-3 text-xs font-mono text-brand-green text-center border-t border-brand-border/40">
+                                    YouTube Project #1
+                                </div>
+                            </div>
+
+                            <!-- YouTube Video 2 -->
+                            <div class="rounded-xl overflow-hidden bg-brand-bg border border-brand-border md:col-span-1">
+                                <div class="aspect-[9/16] relative bg-black">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/1PUcwxhF8sQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="p-3 text-xs font-mono text-brand-green text-center border-t border-brand-border/40">
+                                    YouTube Project #2
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER / CALL TO ACTION -->
+    <footer class="py-20 px-6 border-t border-brand-border bg-brand-card/30 relative">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="text-brand-green font-mono text-sm uppercase tracking-widest">Ready to create something amazing?</span>
+            <h2 class="text-4xl md:text-7xl font-black font-display mt-4 mb-8 uppercase tracking-tight">
+                LET'S MAKE YOUR CONTENT <br>
+                <span class="text-brand-green glow-text">UNFORGETTABLE</span>
+            </h2>
+            <p class="max-w-xl mx-auto text-brand-muted mb-10">
+                Bring energy, retention and top technical quality to your personal or commercial brand.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:nikjarqui@gmail.com" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-green text-brand-bg font-bold font-display hover:bg-brand-greenHover transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-green/20">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span>Start a Project</span>
+                </a>
+                <a href="#portafolio" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-card border border-brand-border text-brand-text font-bold font-display hover:border-brand-green transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="play-circle" class="w-5 h-5 text-brand-green"></i>
+                    <span>View Categories</span>
+                </a>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-brand-border/50 flex flex-col sm:flex-row justify-between items-center text-xs text-brand-muted gap-4">
+                <div>
+                    © 2026 Nikol Jaramillo — All rights reserved.
+                </div>
+                <div class="font-mono text-brand-green/80">
+                    Multimedia Engineering • San Buenaventura Cali
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTION & ANIMATIONS -->
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Toggle Accordion function for Categories
+        function toggleCategory(categoryId) {
+            const content = document.getElementById(`content-${categoryId}`);
+            const icon = document.getElementById(`icon-${categoryId}`);
+
+            if (content.classList.contains('hidden')) {
+                // Open accordion
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                // Close accordion
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
